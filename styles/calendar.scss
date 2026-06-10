@@ -1,0 +1,120 @@
+@import 'variables';
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-top: 70px;
+
+  &__header {
+    display: flex;
+    position: sticky;
+    top: 70px;
+    z-index: 15;
+    background-color: $color-header-bg;
+    border-bottom: 1px solid $color-border;
+    box-sizing: border-box;
+  }
+
+  &__gmt-label {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 70px;
+    flex-shrink: 0;
+    padding-bottom: 8px;
+    font-size: 12px;
+    color: $color-text-secondary;
+    background-color: $color-btn-create-bg;
+    border-right: 1px solid $color-border;
+    box-sizing: border-box;
+  }
+
+  &__header-day {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid $color-border;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    .day-name {
+      font-size: 11px;
+      font-weight: 500;
+      color: $color-text-secondary;
+      text-transform: uppercase;
+    }
+
+    .day-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-top: 6px;
+      font-size: 24px;
+      color: $color-text-main;
+      border-radius: 50%;
+
+      &_today {
+        color: $color-white !important;
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+  }
+
+  &__week-container {
+    display: flex;
+    flex: 1;
+  }
+
+  &__week {
+    display: flex;
+    flex: 1;
+  }
+
+  &__day {
+    position: relative;
+    flex: 1;
+    min-height: 1440px;
+    background-image: linear-gradient(to bottom, $color-bg-hover 1px, transparent 1px);
+    background-size: 100% 60px;
+    border-right: 1px solid $color-border;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.current-time-line {
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: $color-red;
+    border-radius: 50%;
+  }
+}

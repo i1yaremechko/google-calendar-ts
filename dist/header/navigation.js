@@ -29,6 +29,6 @@ const onChangeWeek = (event) => {
 };
 export const initNavigation = () => {
     renderCurrentMonth();
-    navElem === null || navElem === void 0 ? void 0 : navElem.addEventListener('click', onChangeWeek);
-    createBtn === null || createBtn === void 0 ? void 0 : createBtn.addEventListener('click', openModal);
+    navElem?.addEventListener('click', onChangeWeek);
+    createBtn?.addEventListener('click', openModal);
 };
